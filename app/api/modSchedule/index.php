@@ -1,7 +1,14 @@
 <?php
 
 // $insertRow = implode(',',array('数学', '英语', '语文', '物理', '化学', '生物', '政治', '自习', '自习'));
-$insertRow = array('数学', '英语', '语文', '物理', '化学', '生物', '政治', '自习', '自习');
+$scheduleInfo = trim($_GET['schedule']);
+$schedule = explode(',', $scheduleInfo);
+if ($schedule) {
+    $insertRow = $schedule;
+} else {
+    $insertRow = array('数学', '英语', '语文', '物理', '化学', '生物', '政治', '自习', '自习');
+}
+
 if (isset($_GET['weekday']) && trim($_GET['weekday']) != '') {
     try {
         $day = intval(trim($_GET['weekday']));
@@ -23,6 +30,11 @@ if ($day > 7 || $day < 1) {
     $response->Code = '23333';
     $response->data = array();
     exit(json_encode($response));
+}
+
+$day = $day + 1;
+if ($day > 7) {
+    $day = 1;
 }
 
 $server = 'localhost';
