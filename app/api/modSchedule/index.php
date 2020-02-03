@@ -19,7 +19,7 @@ if (isset($_POST['weekday']) && trim($_POST['weekday']) != '') {
         exit(json_encode($response));
     }
 } else {
-    $response->message = 'Wrong Execution';
+    $response->message = 'Wrong Execution' . '-' . $_POST['weekday'];
     $response->Code = '22222';
     $response->data = array();
     exit(json_encode($response));
