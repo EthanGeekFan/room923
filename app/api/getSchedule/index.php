@@ -40,6 +40,7 @@ $result = $stmt->get_result()->fetch_assoc();
 if ($result) {
     $data->weekday = $day;
     $data->schedule = json_decode($result['schedule']);
+    $data->scheduleTime = json_decode($result['schedule_time']);
     $data->mod_date = $result['mod_date'];
     $response->message = 'Success';
     $response->Code = '66666';
