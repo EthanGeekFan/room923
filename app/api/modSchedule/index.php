@@ -1,5 +1,7 @@
 <?php
 
+// $insertRow = implode(',',array('数学', '英语', '语文', '物理', '化学', '生物', '政治', '自习', '自习'));
+$insertRow = array('数学', '英语', '语文', '物理', '化学', '生物', '政治', '自习', '自习');
 if (isset($_GET['weekday']) && trim($_GET['weekday']) != '') {
     try {
         $day = intval(trim($_GET['weekday']));
@@ -31,23 +33,17 @@ $conn = new mysqli($server, $user, $passwd, $dbname);
 if ($conn->connect_error) {
     die('Database Connection Failed: ') . $conn->connect_error;
 }
-// echo 'hello';
-// query and respond
-$stmt = $conn->prepare("SELECT * FROM demo WHERE weekday = ?;");
-$stmt->bind_param('i', $day);
-$stmt->execute();
-$result = $stmt->get_result()->fetch_assoc();
-if ($result) {
-    $data->weekday = $day;
-    $data->schedule = json_decode($result['schedule']);
-    $data->mod_date = $result['mod_date'];
+$stmt = $conn->prepare("UPDATE demo SET schedule = ? WHERE weekday = ?;");
+$stmt->bind_param("si", json_encode($insertRow), $day);
+$success = $stmt->execute();
+if ($success) {
     $response->message = 'Success';
     $response->Code = '66666';
-    $response->data = $data;
-} else {
-    $response->message = 'Wrong Execution';
-    $response->Code = '22222';
     $response->data = array();
+    exit(json_encode($response));
+} else {
+    $response->message = 'Database Error';
+    $response->Code = '99999';
+    $response->data = array();
+    exit(json_encode($response));
 }
-
-exit(json_encode($response));
