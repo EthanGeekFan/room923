@@ -1,7 +1,7 @@
 <?php
 
 // $insertRow = implode(',',array('数学', '英语', '语文', '物理', '化学', '生物', '政治', '自习', '自习'));
-$scheduleInfo = trim($_GET['schedule']);
+$scheduleInfo = trim($_POST['schedule']);
 $schedule = explode(',', $scheduleInfo);
 if ($schedule) {
     $insertRow = $schedule;
@@ -9,9 +9,9 @@ if ($schedule) {
     $insertRow = array('数学', '英语', '语文', '物理', '化学', '生物', '政治', '自习', '自习');
 }
 
-if (isset($_GET['weekday']) && trim($_GET['weekday']) != '') {
+if (isset($_POST['weekday']) && trim($_POST['weekday']) != '') {
     try {
-        $day = intval(trim($_GET['weekday']));
+        $day = intval(trim($_POST['weekday']));
     } catch (Exception $e) {
         $response->message = 'Wrong Parameter Value';
         $response->Code = '23333';
