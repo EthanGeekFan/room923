@@ -21,7 +21,8 @@ if (isset($_POST['weekday']) && trim($_POST['weekday']) != '') {
 } else {
     $response->message = 'Wrong Execution' . '-' . $_POST['weekday'] . '-' . $_POST['schedule'];
     $response->Code = '22222';
-    $response->data = array();
+    // $response->data = array();
+    $response->data = $_POST;
     exit(json_encode($response));
 }
 
