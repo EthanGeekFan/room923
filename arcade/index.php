@@ -203,7 +203,7 @@
                                 <b>THIS IS THE DESCRIPTION OF THE GAME</b>
                                 <br>
                                 <br>
-                                This text field should be provided by the game maker to describ his or her game. The
+                                This text field should be provided by the game maker to describe his or her game. The
                                 description here should include the style of the game, for example,
                                 how many people can be involved, whether it needs good quality of internet connection,
                                 the average/typical time per round. It should be in detail but
@@ -225,7 +225,7 @@
                                 <b>THIS IS THE DESCRIPTION OF THE GAME</b>
                                 <br>
                                 <br>
-                                This text field should be provided by the game maker to describ his or her game. The
+                                This text field should be provided by the game maker to describe his or her game. The
                                 description here should include the style of the game, for example,
                                 how many people can be involved, whether it needs good quality of internet connection,
                                 the average/typical time per round. It should be in detail but
@@ -247,7 +247,7 @@
                                 <b>THIS IS THE DESCRIPTION OF THE GAME</b>
                                 <br>
                                 <br>
-                                This text field should be provided by the game maker to describ his or her game. The
+                                This text field should be provided by the game maker to describe his or her game. The
                                 description here should include the style of the game, for example,
                                 how many people can be involved, whether it needs good quality of internet connection,
                                 the average/typical time per round. It should be in detail but
