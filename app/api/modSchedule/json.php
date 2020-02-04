@@ -1,7 +1,7 @@
 <?php
 
 // $insertRow = implode(',',array('数学', '英语', '语文', '物理', '化学', '生物', '政治', '自习', '自习'));
-$post = json_decode(file_get_contents('php://input'));
+$post = json_decode(file_get_contents('php://input', true));
 $scheduleInfo = trim($post->schedule);
 $schedule = explode(',', $scheduleInfo);
 if ($schedule) {
@@ -31,6 +31,7 @@ if ($day > 7 || $day < 1) {
     $response->message = 'Wrong Parameter Value' . '-' . $post->weekday . '-' . $post->schedule;
     $response->Code = '23333';
     $response->data = array();
+    $response->post = $post;
     exit(json_encode($response));
 }
 
