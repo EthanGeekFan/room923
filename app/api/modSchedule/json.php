@@ -12,7 +12,7 @@ if ($schedule) {
 
 if ($post->weekday && trim($post->weekday) != '') {
     try {
-        $day = intval(trim($_POST['weekday']));
+        $day = intval(trim($post->weekday));
     } catch (Exception $e) {
         $response->message = 'Wrong Parameter Value';
         $response->Code = '23333';
