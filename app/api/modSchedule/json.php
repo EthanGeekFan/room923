@@ -28,7 +28,7 @@ if ($post->weekday && trim($post->weekday) != '') {
 }
 
 if ($day > 7 || $day < 1) {
-    $response->message = 'Wrong Parameter Value' . '-' . $post->weekday . '-' . $post->schedule;
+    $response->message = 'Wrong Parameter Value' . '-' . $post->weekday . '-' . $post->schedule . $day;
     $response->Code = '23333';
     $response->data = array();
     $response->post = $post;
