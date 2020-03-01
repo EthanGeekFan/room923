@@ -67,10 +67,13 @@ div.content {
 }
 
 div.videos {
-    width: 80%;
-    padding: 5%;
-    /* background-color: forestgreen; */
+    width: 94%;
     color: floralwhite;
+}
+
+div.item {
+    padding: 2%;
+    float: left;
 }
 
 button.portal {
