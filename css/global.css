@@ -63,7 +63,7 @@ div.portal {
 
 div.content {
     width: 100%;
-    min-height: 200%;
+    height: 200%;
     background: linear-gradient(0deg, #fb6ed1, #a777e3);
 }
 
