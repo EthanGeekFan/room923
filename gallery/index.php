@@ -43,7 +43,7 @@
                     <source src="/vids/VID_20181121_004714.mp4" type="video/mp4">
                     </object> 
                   </video> -->
-                <?php
+                <!-- <?php
                     $videos = scandir("../vids");
                     foreach ($videos as $video) {
                         if ($video == '.' || $video == '..') {
@@ -51,7 +51,7 @@
                         }
                         echo '<div class="item"><video width="500" height="281.25" controls><source src="/vids/' . $video . '" type="video/mp4"></object></video></div>';
                     }
-                ?>
+                ?> -->
             </div>
         </div>
     </div>
