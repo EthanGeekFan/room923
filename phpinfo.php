@@ -3,6 +3,7 @@
 
 <head>
     <title>phpinfo</title>
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 
 <body>
