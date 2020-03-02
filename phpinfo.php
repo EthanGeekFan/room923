@@ -3,6 +3,7 @@
 
 <head>
     <title>phpinfo</title>
+    <link rel="shortcut icon" href="/favicon.png">
     <link rel="stylesheet" href="/css/global.css">
 </head>
 
