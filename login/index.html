@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Login | Room 923</title>
+    <link rel="shortcut icon" href="/favicon.png">
     <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/login.css">
     <style>
         h2 {
             font-size: 50px;
@@ -103,6 +103,9 @@
             font-weight: bold;
             transform: translateY(5px);
         }
+        a.signup {
+            color: rgb(255, 184, 53);
+        }
     </style>
 </head>
 
@@ -113,14 +116,17 @@
                 <h2>LOGIN</h1>
             </div>
             <div class="inputs">
+                <form action="login.php" method="POST">
                 <div class="fields">
                     <div class="username">
-                        <input type="text" name="username" id="username" placeholder="Your Username">
+                        <input type="text" name="username" id="username" placeholder="Your Username" required>
                     </div>
                 </div>
                 <div class="fields">
                     <div class="password">
-                        <input type="password" name="password" id="password" placeholder="Password">
+                        <input type="password" name="password" id="password" placeholder="Password" required>
+                        <br>
+                        <p class="decription" style="float: left; padding-left: 30px; margin-top: 7px;">Don't have an account? <a class="signup" href="">Sign up</a></p>
                     </div>
                 </div>
                 <div class="fields">
@@ -129,6 +135,7 @@
                         <input type="submit" name="submit" id="submit" value="GO">
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
