@@ -11,7 +11,7 @@ $password = trim($_POST['password']);
 
 if ($username && $password) {
     // encrypt password
-    $password = md5($password);
+    $password = $password;
     // connect to database
     $server = 'localhost';
     $user = 'php';
@@ -23,25 +23,15 @@ if ($username && $password) {
     }
     // echo 'hello';
     // query and respond
-    $stmt = $conn->prepare("SELECT username, password FROM users WHERE username = ?;");
-    $stmt->bind_param("s", $username);
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? and password = ?;");
+    $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
     if ($result) {
-        // echo $result;
-        echo 'success';
-        echo '<br>';
-        // foreach ($result as $user) {
-        //     echo $user[0];
-        //     // echo $user['username'];
-        //     echo '<br>';
-        //     // echo $user['password'];
-        // }
-        echo 'your password:' . $result['password'];
+        header("refresh:0;url=/");
     } else {
-        // echo $result;
-        echo 'Sorry! You have not registered! <br>';
-        echo 'Username: ' . $username;
+        header("refresh:0;url=/login/");
+        exit;
     }
 } else {
     echo 'Empty Username or Password! ';
