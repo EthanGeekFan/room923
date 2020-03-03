@@ -29,6 +29,7 @@ if ($username && $password) {
     $result = $stmt->get_result()->fetch_assoc();
     if ($result) {
         header("refresh:0;url=/");
+        exit;
     } else {
         header("refresh:0;url=/login/");
         exit;
