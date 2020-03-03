@@ -81,14 +81,27 @@
         }
 
         #submit:hover {
+            /* background-color: rgb(44, 39, 31); */
             transition: 0.5s;
             width: 80px;
             height: 80px;
             font-size: 30px;
             padding: 0;
-            background-color: rgb(255, 184, 53);
+            /* background-color: rgb(243, 172, 39); */
             box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.164), 0px 10px 20px rgba(255, 184, 53, 0.336);
             font-weight: bold;
+        }
+
+        #submit:active {
+            transition: 0.2s;
+            width: 80px;
+            height: 80px;
+            font-size: 30px;
+            padding: 0;
+            background-color: rgb(247, 174, 39);
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.164), 0px 5px 10px rgba(255, 184, 53, 0.336);
+            font-weight: bold;
+            transform: translateY(5px);
         }
     </style>
 </head>
