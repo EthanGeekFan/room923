@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Room 923</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <style>
+        h2 {
+            font-size: 50px;
+        }
+
+        div.form {
+            width: 500px;
+            height: 700px;
+            /* background-color: grey; */
+            position: fixed;
+        }
+
+        div.inputs {
+            height: 596px;
+            /* background-color: lightcoral; */
+        }
+
+        div.fields {
+            /* padding-top: 50px; */
+            height: 100px;
+            /* background-color: lightcyan; */
+            display: flex;
+            align-content: center;
+            justify-items: center;
+        }
+
+        button {
+            outline: none;
+        }
+
+        input {
+            /* height: fit-content; */
+            transition: 0.6s;
+            outline: none;
+            width: 300px;
+            font-size: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 40px;
+            padding-right: 40px;
+            border-radius: 50px;
+            border-color: rgb(255, 184, 53);
+            border-width: 0;
+            box-shadow: 5px 5px 10px rgba(73, 73, 73, 0.541);
+            color: rgb(41, 41, 41);
+        }
+
+        input:hover {
+            transition: 0.6s;
+            outline: none;
+            width: 300px;
+            font-size: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 40px;
+            padding-right: 40px;
+            border-radius: 50px;
+            border-color: rgb(255, 184, 53);
+            border-width: 0;
+            color: rgb(41, 41, 41);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
+        }
+
+        #submit {
+            width: 80px;
+            transition: 0.7s;
+            height: 80px;
+            font-size: 30px;
+            padding: 0;
+            background-color: rgb(255, 184, 53);
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.267);
+            font-weight: bold;
+        }
+
+        #submit:hover {
+            transition: 0.5s;
+            width: 80px;
+            height: 80px;
+            font-size: 30px;
+            padding: 0;
+            background-color: rgb(255, 184, 53);
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.164), 0px 10px 20px rgba(255, 184, 53, 0.336);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome">
+        <div class="form">
+            <div class="title">
+                <h2>LOGIN</h1>
+            </div>
+            <div class="inputs">
+                <div class="fields">
+                    <div class="username">
+                        <input type="text" name="username" id="username" placeholder="Your Username">
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="password">
+                        <input type="password" name="password" id="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="submit">
+                        <!-- <button class="submit" type="submit" name="submit" id="submit" value="GO">GO</button> -->
+                        <input type="submit" name="submit" id="submit" value="GO">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
