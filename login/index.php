@@ -242,7 +242,6 @@
                     <div class="fields">
                         <div class="username">
                             <input type="text" name="username" id="username" placeholder="Your Username" required>
-                            <img id="status">
                         </div>
                     </div>
                     <div class="fields">
