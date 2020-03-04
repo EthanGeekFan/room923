@@ -35,7 +35,7 @@ if ($username && $password && $email) {
         header('refresh: 0; url=/login/?username=' . $username . '&signup=true');
     }
 } else {
-    echo 'Empty Username or Password! ';
+    echo 'Empty Username, Password or Email! ';
 }
 
 ?>

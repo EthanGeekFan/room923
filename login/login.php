@@ -23,7 +23,7 @@ if ($username && $password) {
     }
     // echo 'hello';
     // query and respond
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? and password = ?;");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?;");
     $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
