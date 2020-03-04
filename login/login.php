@@ -40,13 +40,11 @@ if ($username && $password) {
         exit;
         // echo 'set';
     } else {
-        header("refresh:0;url=/login/");
+        header("refresh:0;url=/login/?username=" . $username);
         exit;
     }
 } else {
     echo 'Empty Username or Password! ';
 }
 
-
-// session_start();
-// $_SESSION["admin"] = null;
+?>

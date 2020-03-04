@@ -6,6 +6,9 @@
     <title>Login | Room 923</title>
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="stylesheet" href="/css/global.css">
+    <script src="/js/lib/jquery-3.4.1.min.js"></script>
+    <script src="/js/lib/jquery.validate.min.js"></script>
+    <!-- <script src="/js/lib/messages_zh.min.js"></script> -->
     <style>
         h2 {
             font-size: 50px;
@@ -108,10 +111,37 @@
             color: rgb(255, 184, 53);
             cursor: pointer;
         }
+
+        p.message {
+            color: rgb(255, 144, 53);
+        }
     </style>
     <script>
+        function setInfo(username) {
+            document.getElementById('username').value = username;
+            document.getElementById('msg').innerHTML = 'Wrong Username or Password!'
+        }
+
         function signup() {
-            var form = document.getElementById('form');
+            if ($("#username").val()){
+                validate()
+            }
+            var lock = false;
+            $("#username").on("compositionstart", function () {
+                lock = true;
+            });
+            $("#username").on("compositionend", function () {
+                lock = false;
+                validate();
+            });
+            $("#username").on("input", function () {
+                if (!lock) {
+                    validate();
+                }
+            });
+            document.title = 'Sign Up | Room 923'
+            document.getElementById('msg').innerHTML = '';
+            var form = document.getElementById('form-login');
             var formTitle = document.getElementById('formTitle');
             var username = document.getElementById('username');
             var password = document.getElementById('password');
@@ -131,10 +161,13 @@
                                </div>';
             hint.innerHTML = '';
             form.insertBefore(email, submit);
+            form.id = 'form-signup';
         }
 
         function login() {
-            var form = document.getElementById('form');
+            $("#username").unbind();
+            document.title = 'Login | Room 923'
+            var form = document.getElementById('form-signup');
             var formTitle = document.getElementById('formTitle');
             var username = document.getElementById('username');
             var email = document.getElementById('emladdr');
@@ -142,20 +175,37 @@
             var submit = document.getElementById('submitField');
             form.action = 'login.php';
             formTitle.innerHTML = 'LOGIN';
-
-            // var email = document.createElement('div');
-            // email.className = 'fields';
-            // email.innerHTML = '<div class="email" id="emladdr"> \
-            //                         <input type="text" name="email" id="email" placeholder="Email Address" required> \
-            //                         <br> \
-            //                         <p id="description-signup" style="float: left; padding-left: 30px; margin-top: 7px;">Already have an \
-            //                         account? <a class="link" onclick="login()">Log in</a></p> \
-            //                    </div>';
-            // hint.innerHTML = '';
-            // form.insertBefore(email, submit);
+            var msgs = document.getElementsByClassName('message');
             form.removeChild(email);
             hint.innerHTML = 'Don\'t have an account? <a class="link" onclick="signup()">Sign up</a>';
+            form.id = "form-login";
+            $("#username").css('color', 'rgb(41, 41, 41)')
         }
+    </script>
+    <script>
+        function validate(){
+            var usr = $("#username").val();
+            if (!usr) {
+                $("#username").css('color', 'rgb(41, 41, 41)');
+                return;
+            }
+            $.post('usrValidate.php', {
+                username: usr
+            }, function (data, status) {
+                if (status == 'success' && data == 'true') {
+                    $("#username").css('color', 'green');
+                } else {
+                    if (status != 'success') {
+                        alert('Network Error! Check Your Internet Connection!');
+                    } else {
+                        $("#username").css('color', 'red');
+                    }
+                }
+            })
+        }
+        $(document).ready(function () {
+            var lock;
+        })
     </script>
 </head>
 
@@ -164,19 +214,25 @@
         <div class="form">
             <div class="title">
                 <h2 id="formTitle">LOGIN</h1>
+                    <div class="message">
+                        <p class="message" id="msg"></p>
+                    </div>
             </div>
             <div class="inputs">
-                <form action="login.php" method="POST" id="form">
+                <form action="login.php" method="POST" id="form-login">
                     <div class="fields">
                         <div class="username">
                             <input type="text" name="username" id="username" placeholder="Your Username" required>
+                            <img id="status">
                         </div>
                     </div>
                     <div class="fields">
                         <div class="password" id='pwd'>
-                            <input type="password" name="password" id="password" placeholder="Password" required>
+                            <input type="password" name="password" id="password" placeholder="Password" required
+                                minlength="8">
                             <br>
-                            <p id="description-login" style="float: left; padding-left: 30px; margin-top: 7px;">Don't have an
+                            <p id="description-login" style="float: left; padding-left: 30px; margin-top: 7px; ">Don't
+                                have an
                                 account? <a class="link" onclick="signup()">Sign up</a></p>
                         </div>
                     </div>
@@ -190,6 +246,12 @@
             </div>
         </div>
     </div>
+    <?php
+    $username = trim($_GET['username']);
+    if ($username) {
+        echo '<script>setInfo("' . $username . '");</script>';
+    }
+    ?>
 </body>
 
 </html>
