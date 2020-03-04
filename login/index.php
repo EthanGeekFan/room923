@@ -73,6 +73,7 @@
         }
 
         #submit {
+            margin-top: 20px;
             width: 80px;
             transition: 0.7s;
             height: 80px;
@@ -131,18 +132,18 @@
         }
 
         function signup() {
-            if ($("#username").val()){
+            if ($("#username").val()) {
                 validate()
             }
             var lock = false;
-            $("#username").on("compositionstart", function () {
+            $("#username").on("compositionstart", function() {
                 lock = true;
             });
-            $("#username").on("compositionend", function () {
+            $("#username").on("compositionend", function() {
                 lock = false;
                 validate();
             });
-            $("#username").on("input", function () {
+            $("#username").on("input", function() {
                 if (!lock) {
                     validate();
                 }
@@ -186,7 +187,7 @@
             formTitle.innerHTML = 'LOGIN';
             var msgs = document.getElementsByClassName('message');
             form.removeChild(email);
-            hint.innerHTML = 'Don\'t have an account? <a class="link" onclick="signup()">Sign up</a>';
+            hint.innerHTML = 'Don\'t have an account? <a class="link" onclick="signup()">Sign up</a><br><a class="link" href="/forgot/" style="float: left; color: rgb(255, 184, 53);">Forgot your password?</a>';
             form.id = "form-login";
             $("#username").css('color', 'rgb(41, 41, 41)');
             $("#form-login").unbind();
@@ -198,7 +199,7 @@
         }
     </script>
     <script>
-        function validate(){
+        function validate() {
             var usr = $("#username").val();
             if (!usr) {
                 $("#username").css('color', 'rgb(41, 41, 41)');
@@ -206,7 +207,7 @@
             }
             $.post('usrValidate.php', {
                 username: usr
-            }, function (data, status) {
+            }, function(data, status) {
                 if (status == 'success' && data == 'true') {
                     valid = true;
                     $("#username").css('color', 'green');
@@ -223,8 +224,7 @@
                 }
             })
         }
-        $(document).ready(function () {
-        })
+        $(document).ready(function() {})
     </script>
 </head>
 
@@ -246,12 +246,11 @@
                     </div>
                     <div class="fields">
                         <div class="password" id='pwd'>
-                            <input type="password" name="password" id="password" placeholder="Password" required
-                                minlength="8">
+                            <input type="password" name="password" id="password" placeholder="Password" required minlength="8">
                             <br>
                             <p id="description-login" style="float: left; padding-left: 30px; margin-top: 7px; ">Don't
                                 have an
-                                account? <a class="link" onclick="signup()">Sign up</a></p>
+                                account? <a class="link" onclick="signup()">Sign up</a><br><a class="link" href="/forgot/" style="float: left; color: rgb(255, 184, 53);">Forgot your password?</a></p>
                         </div>
                     </div>
                     <div class="fields" id="submitField">

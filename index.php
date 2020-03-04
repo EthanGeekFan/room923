@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
+<!-- <?php
+$login = false;
 
+session_start();
+
+if (isset($_SESSION['login']) && $_SESSION['login'] == 1){
+    $username = $_SESSION['username'];
+    echo 'Hello, ' . $username . '! <a href="/login/logout.php" style="color: yellow;">Log Out</a>';
+} else {
+    echo '<a href="/login/" style="color: yellow;">LOGIN HERE</a>';
+}
+?> -->
 <head>
     <title>
         923 | Home
@@ -31,6 +42,9 @@
 <body>
     <!-- <h1>Welcome to Room 923!</h1> -->
     <div class="welcome">
+        <!-- <div class="usrinfo">
+            <h2>Hello, Ethan!</h2>
+        </div> -->
         <h1 class="title"><b>WELCOME<br> TO<br> <i id="role"
                     style="color: rgb(255, 184, 53); font-size: 200px;">Room</i><br>923</b></h1>
     </div>
@@ -64,21 +78,3 @@
 </body>
 
 </html>
-
-<?php
-
-// $sessionName = session_name();
-// $sessionID = $_GET[$sessionName];
-// session_id($sessionID);
-$login = false;
-
-session_start();
-
-if (isset($_SESSION['login']) && $_SESSION['login'] == 1){
-    $username = $_SESSION['username'];
-    echo 'Hello, ' . $username . '! <a href="/login/logout.php" style="color: yellow;">Log Out</a>';
-} else {
-    echo '<a href="/login/" style="color: yellow;">LOGIN HERE</a>';
-}
-
-?>
