@@ -28,11 +28,11 @@ if ($username && $password) {
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
     if ($result) {
-        // $savePath = '/var/www/sessions/';
+        // $savePath = '/../sessions/';
         header("refresh:0;url=/");
         $lifetime = 24 * 60 * 60;
-        session_save_path($savePath);
-        // session_set_cookie_params($lifetime);
+        // session_save_path($savePath);
+        session_set_cookie_params($lifetime);
         session_start();
         $_SESSION['username'] = $username;
         $_SESSION['login'] = true;

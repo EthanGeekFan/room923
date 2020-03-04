@@ -10,6 +10,10 @@ $username = trim($_POST['username']);
 $password = trim($_POST['password']);
 $email = trim($_POST['email']);
 
+if (preg_match('/^[A-Za-z0-9@#$_-]{2,16}$/u', $username) || strlen($password) > 7 || preg_match('/^[A-Za-z0-9@#$\._-]{2,16}$/u', $password)) {
+    exit('Invalid info!');
+}
+
 if ($username && $password && $email) {
     // encrypt password
     $password = $password;
@@ -22,17 +26,13 @@ if ($username && $password && $email) {
     if ($conn->connect_error) {
         die('Database Connection Failed: ') . $conn->connect_error;
     }
-    // echo 'hello';
-    // query and respond
-    // $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? and password = ?;");
     $stmt = $conn->prepare("INSERT INTO users(username,password,email) VALUES (?, ?, ?);");
     $stmt->bind_param("sss", $username, $password, $email);
     $success = $stmt->execute();
-    echo 'stmt';
     if ($success) {
-        echo 'yes';
+        header('refresh: 0; url=/login/?username=' . $username . '&success=true');
     } else {
-        echo 'no';
+        header('refresh: 0; url=/login/?username=' . $username . '&signup=true');
     }
 } else {
     echo 'Empty Username or Password! ';

@@ -67,22 +67,18 @@
 
 <?php
 
-$sessionName = session_name();
-$sessionID = $_GET[$sessionName];
-session_id($sessionID);
+// $sessionName = session_name();
+// $sessionID = $_GET[$sessionName];
+// session_id($sessionID);
+$login = false;
 
 session_start();
 
-if (isset($_SESSION['login'])){
-    // header('location: /login/');
-    echo $_SESSION['username'];
-    // exit;
+if (isset($_SESSION['login']) && $_SESSION['login'] == 1){
+    $username = $_SESSION['username'];
+    echo 'Hello, ' . $username . '! <a href="/login/logout.php" style="color: yellow;">Log Out</a>';
 } else {
-    // header('refresh: 0; url=/login/');
-    // echo $sessionName;
-    // echo 'no';
-    // exit;
-    // echo $_COOKIE;
+    echo '<a href="/login/" style="color: yellow;">LOGIN HERE</a>';
 }
 
 ?>

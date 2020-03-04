@@ -117,9 +117,17 @@
         }
     </style>
     <script>
+        var lock;
+        var valid;
+
         function setInfo(username) {
             document.getElementById('username').value = username;
             document.getElementById('msg').innerHTML = 'Wrong Username or Password!'
+        }
+
+        function afterSuccess(username) {
+            document.getElementById('username').value = username;
+            document.getElementById('msg').innerHTML = 'Signed up! You can login! '
         }
 
         function signup() {
@@ -181,30 +189,39 @@
             form.id = "form-login";
             $("#username").css('color', 'rgb(41, 41, 41)')
         }
+
+        function check() {
+            validate();
+            return valid;
+        }
     </script>
     <script>
         function validate(){
             var usr = $("#username").val();
             if (!usr) {
                 $("#username").css('color', 'rgb(41, 41, 41)');
-                return;
+                return false;
             }
             $.post('usrValidate.php', {
                 username: usr
             }, function (data, status) {
                 if (status == 'success' && data == 'true') {
+                    valid = true;
                     $("#username").css('color', 'green');
+                    return true;
                 } else {
                     if (status != 'success') {
                         alert('Network Error! Check Your Internet Connection!');
+                        return false;
                     } else {
+                        valid = true;
                         $("#username").css('color', 'red');
+                        return false;
                     }
                 }
             })
         }
         $(document).ready(function () {
-            var lock;
         })
     </script>
 </head>
@@ -219,7 +236,7 @@
                     </div>
             </div>
             <div class="inputs">
-                <form action="login.php" method="POST" id="form-login">
+                <form action="login.php" method="POST" id="form-login" onsubmit="validate(); return valid;">
                     <div class="fields">
                         <div class="username">
                             <input type="text" name="username" id="username" placeholder="Your Username" required>
@@ -248,8 +265,16 @@
     </div>
     <?php
     $username = trim($_GET['username']);
+    $signup = trim($_GET['signup']);
+    $success = trim($_GET['success']);
     if ($username) {
         echo '<script>setInfo("' . $username . '");</script>';
+    }
+    if ($signup) {
+        echo '<script>signup();</script>';
+    }
+    if ($username && $success) {
+        echo '<script>afterSuccess("' . $username . '");</script>';
     }
     ?>
 </body>
