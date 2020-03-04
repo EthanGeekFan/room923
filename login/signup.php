@@ -10,7 +10,7 @@ $username = trim($_POST['username']);
 $password = trim($_POST['password']);
 $email = trim($_POST['email']);
 
-if (preg_match('/^[A-Za-z0-9@#$_-]{2,16}$/u', $username) || strlen($password) > 7 || preg_match('/^[A-Za-z0-9@#$\._-]{2,16}$/u', $password)) {
+if (!(preg_match('/^[A-Za-z0-9@#$_-]{2,16}$/u', $username) || strlen($password) > 7 || preg_match('/^[A-Za-z0-9@#$\._-]{2,16}$/u', $password))) {
     exit('Invalid info!');
 }
 
