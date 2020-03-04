@@ -103,38 +103,89 @@
             font-weight: bold;
             transform: translateY(5px);
         }
-        a.signup {
+
+        a.link {
             color: rgb(255, 184, 53);
+            cursor: pointer;
         }
     </style>
+    <script>
+        function signup() {
+            var form = document.getElementById('form');
+            var formTitle = document.getElementById('formTitle');
+            var username = document.getElementById('username');
+            var password = document.getElementById('password');
+            var hint = document.getElementById('description-login');
+            var submit = document.getElementById('submitField');
+            form.action = 'signup.php';
+            formTitle.innerHTML = 'SIGN UP';
+
+            var email = document.createElement('div');
+            email.className = 'fields';
+            email.id = 'emladdr';
+            email.innerHTML = '<div class="email"> \
+                                    <input type="email" name="email" id="email" placeholder="Email Address" required> \
+                                    <br> \
+                                    <p id="description" style="float: left; padding-left: 30px; margin-top: 7px;">Already have an \
+                                    account? <a class="link" onclick="login()">Log in</a></p> \
+                               </div>';
+            hint.innerHTML = '';
+            form.insertBefore(email, submit);
+        }
+
+        function login() {
+            var form = document.getElementById('form');
+            var formTitle = document.getElementById('formTitle');
+            var username = document.getElementById('username');
+            var email = document.getElementById('emladdr');
+            var hint = document.getElementById('description-login');
+            var submit = document.getElementById('submitField');
+            form.action = 'login.php';
+            formTitle.innerHTML = 'LOGIN';
+
+            // var email = document.createElement('div');
+            // email.className = 'fields';
+            // email.innerHTML = '<div class="email" id="emladdr"> \
+            //                         <input type="text" name="email" id="email" placeholder="Email Address" required> \
+            //                         <br> \
+            //                         <p id="description-signup" style="float: left; padding-left: 30px; margin-top: 7px;">Already have an \
+            //                         account? <a class="link" onclick="login()">Log in</a></p> \
+            //                    </div>';
+            // hint.innerHTML = '';
+            // form.insertBefore(email, submit);
+            form.removeChild(email);
+            hint.innerHTML = 'Don\'t have an account? <a class="link" onclick="signup()">Sign up</a>';
+        }
+    </script>
 </head>
 
 <body>
     <div class="welcome">
         <div class="form">
             <div class="title">
-                <h2>LOGIN</h1>
+                <h2 id="formTitle">LOGIN</h1>
             </div>
             <div class="inputs">
-                <form action="login.php" method="POST">
-                <div class="fields">
-                    <div class="username">
-                        <input type="text" name="username" id="username" placeholder="Your Username" required>
+                <form action="login.php" method="POST" id="form">
+                    <div class="fields">
+                        <div class="username">
+                            <input type="text" name="username" id="username" placeholder="Your Username" required>
+                        </div>
                     </div>
-                </div>
-                <div class="fields">
-                    <div class="password">
-                        <input type="password" name="password" id="password" placeholder="Password" required>
-                        <br>
-                        <p class="decription" style="float: left; padding-left: 30px; margin-top: 7px;">Don't have an account? <a class="signup" href="">Sign up</a></p>
+                    <div class="fields">
+                        <div class="password" id='pwd'>
+                            <input type="password" name="password" id="password" placeholder="Password" required>
+                            <br>
+                            <p id="description-login" style="float: left; padding-left: 30px; margin-top: 7px;">Don't have an
+                                account? <a class="link" onclick="signup()">Sign up</a></p>
+                        </div>
                     </div>
-                </div>
-                <div class="fields">
-                    <div class="submit">
-                        <!-- <button class="submit" type="submit" name="submit" id="submit" value="GO">GO</button> -->
-                        <input type="submit" name="submit" id="submit" value="GO">
+                    <div class="fields" id="submitField">
+                        <div class="submit">
+                            <!-- <button class="submit" type="submit" name="submit" id="submit" value="GO">GO</button> -->
+                            <input type="submit" name="submit" id="submit" value="GO">
+                        </div>
                     </div>
-                </div>
                 </form>
             </div>
         </div>

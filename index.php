@@ -64,3 +64,25 @@
 </body>
 
 </html>
+
+<?php
+
+$sessionName = session_name();
+$sessionID = $_GET[$sessionName];
+session_id($sessionID);
+
+session_start();
+
+if (isset($_SESSION['login'])){
+    // header('location: /login/');
+    echo $_SESSION['username'];
+    // exit;
+} else {
+    // header('refresh: 0; url=/login/');
+    // echo $sessionName;
+    // echo 'no';
+    // exit;
+    // echo $_COOKIE;
+}
+
+?>
