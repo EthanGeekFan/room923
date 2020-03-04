@@ -16,7 +16,7 @@ if (!(preg_match('/^[A-Za-z0-9@#$_-]{2,16}$/u', $username) || strlen($password) 
 
 if ($username && $password && $email) {
     // encrypt password
-    $password = $password;
+    $password = md5($password);
     // connect to database
     $server = 'localhost';
     $user = 'php';

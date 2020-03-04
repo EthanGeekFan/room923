@@ -170,6 +170,7 @@
             hint.innerHTML = '';
             form.insertBefore(email, submit);
             form.id = 'form-signup';
+            $("#form-signup").on('submit', check);
         }
 
         function login() {
@@ -187,7 +188,8 @@
             form.removeChild(email);
             hint.innerHTML = 'Don\'t have an account? <a class="link" onclick="signup()">Sign up</a>';
             form.id = "form-login";
-            $("#username").css('color', 'rgb(41, 41, 41)')
+            $("#username").css('color', 'rgb(41, 41, 41)');
+            $("#form-login").unbind();
         }
 
         function check() {
