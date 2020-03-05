@@ -33,7 +33,7 @@
         </ul>
     </div>
     <div class="welcome">
-        <h1 class="title"><b>WELCOME<br> TO<br> <i id="role" style="color: rgb(255, 184, 53); font-size: 140px;">Room</i><br>923</b></h1>
+        <h1 class="title"><b>WELCOME<br> TO<br> <i id="role">Room</i><br>923</b></h1>
     </div>
     <script>
         var roles = ['Dorm', 'Cinema', 'Laboratory', 'Arcade', 'Chat Room', 'Chess Room', 'Paradise'];

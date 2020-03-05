@@ -32,7 +32,7 @@
         </ul>
     </div>
     <div class="welcome">
-        <h1 class="title"><b>WELCOME<br>TO<br><i style="color: rgb(255, 184, 53); font-size: 200px;">Arcade</i><br>923</b></h1>
+        <h1 class="title"><b>WELCOME<br>TO<br><i id="role">Arcade</i><br>923</b></h1>
     </div>
 </body>
 

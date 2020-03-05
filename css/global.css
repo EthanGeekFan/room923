@@ -24,7 +24,7 @@ h2 {
     font-size: xx-large;
 }
 
-div{
+div {
     margin: auto;
     text-align: center;
 }
@@ -38,8 +38,8 @@ div.welcome {
 }
 
 div.navigation {
-    height: 120px; 
-    background-color: rgb(44, 44, 44); 
+    height: 120px;
+    background-color: rgb(44, 44, 44);
     align-content: center;
     color: darkgray;
 }
@@ -96,6 +96,11 @@ a {
     color: inherit;
 }
 
+#role {
+    color: rgb(255, 184, 53);
+    font-size: 140px;
+}
+
 /* navigation bar css: */
 
 div.naviBar {
@@ -134,8 +139,7 @@ div.naviBar a {
     text-decoration: none;
 }
 
-div.naviBar a:hover,
-a:active {
+div.naviBar a:hover, a:active {
     background-color: rgba(39, 39, 39, 0.075);
 }
 
@@ -149,4 +153,3 @@ li.end a {
     padding: 20px 30px;
     text-decoration: none;
 }
-
