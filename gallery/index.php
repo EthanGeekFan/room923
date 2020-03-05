@@ -47,12 +47,19 @@
     <div class="content" id="content">
         <div class="videos">
             <?php
-            $videos = scandir("../vids");
-            foreach ($videos as $video) {
-                if ($video == '.' || $video == '..') {
-                    continue;
+            $login = false;
+
+            session_start();
+
+            if (isset($_SESSION['login']) && $_SESSION['login'] == 1) {
+                $videos = scandir("../vids");
+                foreach ($videos as $video) {
+                    if ($video == '.' || $video == '..') {
+                        continue;
+                    }
+                    echo '<div class="item"><video width="500" height="281.25" controls><source src="/vids/' . $video . '" type="video/mp4"></object></video></div>';
                 }
-                echo '<div class="item"><video width="500" height="281.25" controls><source src="/vids/' . $video . '" type="video/mp4"></object></video></div>';
+            } else {
             }
             ?>
         </div>
