@@ -131,6 +131,20 @@
             document.getElementById('msg').innerHTML = 'Signed up! You can login! '
         }
 
+        function failed(situation) {
+            switch (situation) {
+                case 1:
+                    document.getElementById('msg').innerHTML = 'Invalid Username or Password! Try another!';
+                    break;
+                case 2:
+                    document.getElementById('msg').innerHTML = 'The username was taken! Try another!';
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+
         function signup() {
             if ($("#username").val()) {
                 validate()
@@ -224,7 +238,8 @@
                 }
             })
         }
-        $(document).ready(function() {})
+        $(document).ready(function() {
+        })
     </script>
 </head>
 
@@ -238,7 +253,7 @@
                     </div>
             </div>
             <div class="inputs">
-                <form action="login.php" method="POST" id="form-login" onsubmit="validate(); return valid;">
+                <form action="login.php" method="POST" id="form-login" onsubmit="return valid;">
                     <div class="fields">
                         <div class="username">
                             <input type="text" name="username" id="username" placeholder="Your Username" required>
@@ -272,9 +287,16 @@
     }
     if ($signup) {
         echo '<script>signup();</script>';
-    }
-    if ($username && $success) {
+    } 
+    if ($username && $success && $success == 'true') {
         echo '<script>afterSuccess("' . $username . '");</script>';
+    }
+    if ($success && $success == 'false') {
+        if ($username) {
+            echo '<script>failed(2)</script>';
+        } else {
+            echo '<script>failed(1)</script>';
+        }
     }
     ?>
 </body>
