@@ -139,7 +139,10 @@
                 case 2:
                     document.getElementById('msg').innerHTML = 'The username was taken! Try another!';
                     break;
-            
+                case 3:
+                    document.getElementById('msg').innerHTML = 'The email was used! Try another!';
+                    break;
+                
                 default:
                     break;
             }
@@ -282,6 +285,7 @@
     $username = trim($_GET['username']);
     $signup = trim($_GET['signup']);
     $success = trim($_GET['success']);
+    $email = trim($_GET['email']);
     if ($username) {
         echo '<script>setInfo("' . $username . '");</script>';
     }
@@ -292,7 +296,9 @@
         echo '<script>afterSuccess("' . $username . '");</script>';
     }
     if ($success && $success == 'false') {
-        if ($username) {
+        if ($username && $email) {
+            echo '<script>failed(3)</script>';
+        } elseif ($username && !$email) {
             echo '<script>failed(2)</script>';
         } else {
             echo '<script>failed(1)</script>';

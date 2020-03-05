@@ -23,6 +23,14 @@ if (preg_match('/^[A-Za-z0-9@#$_-]{2,16}$/u', $username) && strlen($password) > 
         if ($conn->connect_error) {
             die('Database Connection Failed: ') . $conn->connect_error;
         }
+        $duplicate = $conn->prepare("SELECT * FROM users WHERE email = ?;");
+        $duplicate->bind_param("s", $email);
+        $duplicate->execute();
+        $result = $duplicate->get_result()->fetch_assoc();
+        if ($result) {
+            header('refresh: 0; url=/login/?username=' . $username . '&signup=true&success=false&email=false');
+            exit;
+        }
         $stmt = $conn->prepare("INSERT INTO users(username,password,email) VALUES (?, ?, ?);");
         $stmt->bind_param("sss", $username, $password, $email);
         $success = $stmt->execute();
@@ -37,4 +45,3 @@ if (preg_match('/^[A-Za-z0-9@#$_-]{2,16}$/u', $username) && strlen($password) > 
 } else {
     header('refresh: 0; url=/login/?signup=true&success=false');
 }
-?>
