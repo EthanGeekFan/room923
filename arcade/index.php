@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
-    <title>
-        923 | Home
-    </title>
+    <meta charset="UTF-8">
+    <title>923 | Game Room</title>
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="stylesheet" href="/css/global.css">
 </head>
@@ -33,23 +32,8 @@
         </ul>
     </div>
     <div class="welcome">
-        <h1 class="title"><b>WELCOME<br> TO<br> <i id="role" style="color: rgb(255, 184, 53); font-size: 140px;">Room</i><br>923</b></h1>
+        <h1 class="title"><b>WELCOME<br>TO<br><i style="color: rgb(255, 184, 53); font-size: 200px;">Arcade</i><br>923</b></h1>
     </div>
-    <script>
-        var roles = ['Dorm', 'Cinema', 'Laboratory', 'Arcade', 'Chat Room', 'Chess Room', 'Paradise'];
-        var i = 0;
-
-        function update() {
-            i = i + 1;
-            if (i >= roles.length) {
-                i = 0
-            }
-        }
-        setInterval(() => {
-            document.getElementById("role").innerHTML = roles[i];
-            update();
-        }, 1000);
-    </script>
 </body>
 
 </html>

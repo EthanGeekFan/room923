@@ -95,3 +95,58 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+/* navigation bar css: */
+
+div.naviBar {
+    width: 100%;
+    position: fixed;
+    /* background-color: rgba(0, 0, 0, 0); */
+    background: linear-gradient(rgba(0, 0, 0, 0.164), rgba(0, 0, 0, 0));
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    width: inherit;
+}
+
+li {
+    float: left;
+}
+
+li.end {
+    float: right;
+}
+
+div.naviBar a {
+    display: block;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+}
+
+div.naviBar a:hover,
+a:active {
+    background-color: rgba(39, 39, 39, 0.075);
+}
+
+li.end a {
+    display: block;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+}
+

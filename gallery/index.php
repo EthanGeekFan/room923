@@ -10,6 +10,28 @@
 </head>
 
 <body>
+    <div class="naviBar">
+        <ul>
+            <li><a href="/">Room 923</a></li>
+            <li><a href="/arcade/">Arcade</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/blog/">Blogs</a></li>
+            <?php
+            $login = false;
+
+            session_start();
+
+            if (isset($_SESSION['login']) && $_SESSION['login'] == 1) {
+                $username = $_SESSION['username'];
+                echo '<li class="end"><a href="/login/logout.php">Log Out</a></li>';
+                echo '<li class="end"><a href="">Hi, ' . $username . '! </a></li>';
+            } else {
+                echo '<li class="end"><a href="/login/">Login</a></li>';
+                echo '<li class="end"><a href="/login/?signup=true">Sign up</a></li>';
+            }
+            ?>
+        </ul>
+    </div>
     <div class="welcome">
         <div calss="title">
             <h1 class="title">OUR<br><i style="color: rgb(255, 184, 53);">Legendary</i><br>Past</h1>
@@ -20,30 +42,7 @@
     </div>
     <div class="content" id="content">
         <div class="videos">
-            <!-- <div class="item">
-                <video width="500" height="281.25" controls>
-                    <source src="videos/lihui.mp4" type="video/mp4">
-                    </object> 
-                  </video>
-            </div>
-            <div class="item">
-                <video width="500" height="281.25" controls>
-                    <source src="/vids/VID_20181120_235148.mp4" type="video/mp4">
-                    </object> 
-                  </video>
-            </div>
-            <div class="item">
-                <video width="500" height="281.25" controls>
-                    <source src="/vids/VID_20181121_004604.mp4" type="video/mp4">
-                    </object> 
-                  </video>
-            </div>
-            <div class="item">
-                <video width="500" height="281.25" controls>
-                    <source src="/vids/VID_20181121_004714.mp4" type="video/mp4">
-                    </object> 
-                  </video> -->
-                <!-- <?php
+            <!-- <?php
                     $videos = scandir("../vids");
                     foreach ($videos as $video) {
                         if ($video == '.' || $video == '..') {
@@ -51,9 +50,9 @@
                         }
                         echo '<div class="item"><video width="500" height="281.25" controls><source src="/vids/' . $video . '" type="video/mp4"></object></video></div>';
                     }
-                ?> -->
-            </div>
+                    ?> -->
         </div>
+    </div>
     </div>
 </body>
 

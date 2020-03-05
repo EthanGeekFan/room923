@@ -46,5 +46,3 @@ if ($username && $password) {
 } else {
     echo 'Empty Username or Password! ';
 }
-
-?>

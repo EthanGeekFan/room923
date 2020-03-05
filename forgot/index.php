@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <title>Forgot Password | Room 923</title>
@@ -115,13 +116,13 @@
         }
     </style>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             $("#form-forgot").submit(function() {
                 $.post('forgot.php', {
                     username: $("#username").val(),
                     email: $("#email").val(),
                     password: $("#newPassword").val()
-                }, function (data, status) {
+                }, function(data, status) {
                     if (status == 'success') {
                         if (data == 'true') {
                             window.location = '/login/';
@@ -140,7 +141,31 @@
 </head>
 
 <body>
-    <script>$.post('/login/logout.php', {}, function(){})</script>
+    <script>
+        $.post('/login/logout.php', {}, function() {})
+    </script>
+    <div class="naviBar">
+        <ul>
+            <li><a href="/">Room 923</a></li>
+            <li><a href="/arcade/">Arcade</a></li>
+            <li><a href="/gallery/">Gallery</a></li>
+            <li><a href="/blog/">Blogs</a></li>
+            <?php
+            $login = false;
+
+            session_start();
+
+            if (isset($_SESSION['login']) && $_SESSION['login'] == 1) {
+                $username = $_SESSION['username'];
+                echo '<li class="end"><a href="/login/logout.php">Log Out</a></li>';
+                echo '<li class="end"><a href="">Hi, ' . $username . '! </a></li>';
+            } else {
+                echo '<li class="end"><a href="/login/">Login</a></li>';
+                echo '<li class="end"><a href="/login/?signup=true">Sign up</a></li>';
+            }
+            ?>
+        </ul>
+    </div>
     <div class="welcome">
         <div class="form">
             <div class="title">
