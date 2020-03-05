@@ -6,31 +6,10 @@
     </title>
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="stylesheet" href="/css/global.css">
-    <script>
-        var sleep = function(time) {
-            var startTime = new Date().getTime() + parseInt(time, 10);
-            while (new Date().getTime() < startTime) {}
-        };
-
-        var change = function(str) {
-            document.getElementsByClassName("role").innerHTML = str;
-        }
-
-        var roles = ['Dorm', 'Cinema', 'Laboratory', 'Arcade', 'Chat Room', 'Chess Room', 'Paradise'];
-
-        function animate() {
-            for (role in roles) {
-                setTimeout(() => {
-                    change(role)
-                }, 500);
-            }
-        }
-    </script>
     <style>
         div.naviBar {
             width: 100%;
             position: fixed;
-            height: 70px;
             /* background-color: rgba(0, 0, 0, 0); */
             background: linear-gradient(rgba(0, 0, 0, 0.164), rgba(0, 0, 0, 0));
             display: flex;
@@ -57,7 +36,7 @@
             display: block;
             font-weight: bold;
             color: white;
-            font-size: 25px;
+            font-size: 20px;
             background-color: transparent;
             text-align: center;
             padding: 20px 30px;
@@ -73,7 +52,7 @@
             display: block;
             font-weight: bold;
             color: white;
-            font-size: 25px;
+            font-size: 20px;
             background-color: transparent;
             text-align: center;
             padding: 20px 30px;
@@ -106,7 +85,7 @@
         </ul>
     </div>
     <div class="welcome">
-        <h1 class="title"><b>WELCOME<br> TO<br> <i id="role" style="color: rgb(255, 184, 53); font-size: 200px;">Room</i><br>923</b></h1>
+        <h1 class="title"><b>WELCOME<br> TO<br> <i id="role" style="color: rgb(255, 184, 53); font-size: 140px;">Room</i><br>923</b></h1>
     </div>
     <script>
         var roles = ['Dorm', 'Cinema', 'Laboratory', 'Arcade', 'Chat Room', 'Chess Room', 'Paradise'];
