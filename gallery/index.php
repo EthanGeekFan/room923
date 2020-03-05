@@ -34,10 +34,11 @@
     </div>
     <div class="welcome">
         <div calss="title">
-            <h1 class="title">OUR<br><i style="color: rgb(255, 184, 53);">Legendary</i><br>Past</h1>
+            <h1 class="title">OUR<br><i id="role">Legendary</i><br>Past</h1>
         </div>
         <div class="jump">
-            <a href="#content"><button class="portal">EXPLORE</button></a>
+            <!-- <a href="#content"><button class="portal">EXPLORE</button></a> -->
+            <a href="#content" id="explore">EXPLORE</a>
         </div>
     </div>
     <div class="content" id="content">
