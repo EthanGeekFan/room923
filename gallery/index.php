@@ -12,6 +12,9 @@
 <body>
     <div class="naviBar">
         <ul>
+            <li>
+                <div><img id="logo" src="/logo.svg"></div>
+            </li>
             <li><a href="/">Room 923</a></li>
             <li><a href="/arcade/">Arcade</a></li>
             <li><a href="/gallery/">Gallery</a></li>
@@ -43,15 +46,15 @@
     </div>
     <div class="content" id="content">
         <div class="videos">
-            <!-- <?php
-                    $videos = scandir("../vids");
-                    foreach ($videos as $video) {
-                        if ($video == '.' || $video == '..') {
-                            continue;
-                        }
-                        echo '<div class="item"><video width="500" height="281.25" controls><source src="/vids/' . $video . '" type="video/mp4"></object></video></div>';
-                    }
-                    ?> -->
+            <?php
+            $videos = scandir("../vids");
+            foreach ($videos as $video) {
+                if ($video == '.' || $video == '..') {
+                    continue;
+                }
+                echo '<div class="item"><video width="500" height="281.25" controls><source src="/vids/' . $video . '" type="video/mp4"></object></video></div>';
+            }
+            ?>
         </div>
     </div>
     </div>

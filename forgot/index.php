@@ -146,6 +146,9 @@
     </script>
     <div class="naviBar">
         <ul>
+            <li>
+                <div><img id="logo" src="/logo.svg"></div>
+            </li>
             <li><a href="/">Room 923</a></li>
             <li><a href="/arcade/">Arcade</a></li>
             <li><a href="/gallery/">Gallery</a></li>
