@@ -5,6 +5,7 @@
     <title>
         923 | Home
     </title>
+    <meta name="yandex-verification" content="f01652281728bc24" />
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="stylesheet" href="/css/global.css">
 </head>
