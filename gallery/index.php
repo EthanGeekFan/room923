@@ -60,6 +60,7 @@
                     echo '<div class="item"><video width="500" height="281.25" controls><source src="/vids/' . $video . '" type="video/mp4"></object></video></div>';
                 }
             } else {
+                echo '<h2>Please Login to View The Galleries</h2>';
             }
             ?>
         </div>

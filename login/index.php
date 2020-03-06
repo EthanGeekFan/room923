@@ -16,9 +16,12 @@
 
         div.form {
             width: 500px;
-            height: 700px;
+            height: 550px;
             /* background-color: grey; */
             position: fixed;
+            /* top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
         }
 
         div.inputs {

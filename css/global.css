@@ -189,7 +189,7 @@ div.naviBar a:hover, a:active {
 
 li.end a {
     display: block;
-    font-weight: bold;
+    font-weight: lighter;
     color: white;
     font-size: 20px;
     background-color: transparent;
