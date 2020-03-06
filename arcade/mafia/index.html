@@ -1,18 +1,84 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <title>Arcade | Mafia</title>
     <link rel="shortcut icon" href="/favicon.png">
-    <link rel="stylesheet" href="/css/global.css">
+    <!-- <link rel="stylesheet" href="/css/global.css"> -->
+    <style>
+        html,
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            /* background-color: rgb(186, 128, 252); */
+            background: linear-gradient(180deg, #6e8efb, #a777e3);
+        }
+
+        p.head {
+            position: fixed;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* width: 400px; */
+            /* height: 500px; */
+            padding: 0;
+            margin: 0;
+            /* background-color: grey; */
+            /* display: block; */
+        }
+
+        p.head {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16rem;
+            font-weight: bold;
+            color: rgba(61, 61, 61, 0.377);
+        }
+
+        div.content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            /* width: 500px; */
+            /* height: 900px; */
+            /* max-width: 800px; */
+            /* position: absolute; */
+            margin-top: calc(100vh - 80px);
+        }
+
+        div.contentBackground {
+            position: absolute;
+            top: 80px;
+            width: inherit;
+            background-color: #f8f8f8;
+            box-shadow: -20px 0px 50px rgba(80, 80, 80, 0.568);
+            height: 800px;
+        }
+
+        div.contentContainer {
+            position: relative;
+            padding: 80px 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0px 10px 20px rgba(1, 1, 1, 0.1);
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="welcome">
-        <h1 class="title">You Are Not Welcomed</h1>
-        <script>
-            console.log('hello')
-        </script>
+    <p class="head">
+        ARCADE
+    </p>
+    <div class="content">
+        <div class="contentBackground"></div>
+        <div class="contentContainer"><h2 style="font-size: 5em; padding: 0; margin: 0;">Hello World!</h2></div>
     </div>
 </body>
 
