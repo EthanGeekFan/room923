@@ -181,108 +181,10 @@
             font-size: 26px;
             margin-bottom: 20px;
         }
-
-        div.naviBar {
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            /* background-color: rgba(0, 0, 0, 0); */
-            background: linear-gradient(rgba(231, 231, 231, 0.164), rgba(0, 0, 0, 0));
-            display: flex;
-            align-items: center;
-        }
-
-        ul.nav {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            /* overflow: auto; */
-            width: inherit;
-        }
-
-        ul.nav li {
-            float: left;
-        }
-
-        .nav li.end {
-            float: right;
-        }
-
-        div.naviBar a {
-            display: block;
-            font-weight: bold;
-            color: white;
-            font-size: 20px;
-            background-color: transparent;
-            text-align: center;
-            padding: 20px 30px;
-            text-decoration: none;
-        }
-
-        div.naviBar a:hover,
-        a:active {
-            background-color: rgba(39, 39, 39, 0.075);
-        }
-
-        li.end a {
-            display: block;
-            font-weight: lighter;
-            color: white;
-            font-size: 20px;
-            background-color: transparent;
-            text-align: center;
-            padding: 20px 30px;
-            text-decoration: none;
-        }
-
-        #logo {
-            display: inline-block;
-            padding: 0;
-            margin: 0;
-            width: 50px;
-            height: 50px;
-        }
-
-        .nav li div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100px;
-            height: 63px;
-        }
     </style>
 </head>
 
 <body>
-    <div class="naviBar">
-        <ul class="nav">
-            <li>
-                <div><img id="logo" src="/logo.svg"></div>
-            </li>
-            <li><a href="/">Room 923</a></li>
-            <li><a href="/arcade/">Arcade</a></li>
-            <li><a href="/gallery/">Gallery</a></li>
-            <li><a href="/blog/">Blogs</a></li>
-            <?php
-            $login = false;
-
-            session_start();
-
-            if (isset($_SESSION['login']) && $_SESSION['login'] == 1) {
-                $username = $_SESSION['username'];
-                echo '<li class="end"><a href="/login/logout.php">Log Out</a></li>';
-                echo '<li class="end"><a href="">Hi, ' . $username . '! </a></li>';
-            } else {
-                echo '<li class="end"><a href="/login/">Login</a></li>';
-                echo '<li class="end"><a href="/login/?signup=true">Sign up</a></li>';
-            }
-            ?>
-        </ul>
-    </div>
-
-
     <p class="head"><i>
             ARCADE
         </i></p>
