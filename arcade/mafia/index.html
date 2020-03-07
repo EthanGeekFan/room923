@@ -69,6 +69,7 @@
             box-shadow: 0px 10px 20px rgba(1, 1, 1, 0.1);
             text-align: center;
             border-radius: 20px;
+            z-index: 9;
         }
 
         h1.title {
@@ -104,8 +105,7 @@
         .items li {
             list-style-type: none;
             display: list-item;
-            padding: 80px 0px;
-            /* padding-top: 0; */
+            padding-bottom: 80px;
             text-align: left;
 
         }
@@ -159,6 +159,27 @@
             background: linear-gradient(90deg, rgba(255, 111, 0, 1), rgba(255, 145, 0, 1));
             color: white;
         }
+
+        div.footer {
+            height: 250px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 5;
+        }
+
+        div.footer a {
+            font-size: 23px;
+            text-decoration: none;
+            color: rgba(255, 145, 0, 1);
+        }
+
+        #name {
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
     </style>
     <script>
     </script>
@@ -176,24 +197,82 @@
         </div> -->
         <div class="contentContainer" style="margin-top: 50px;">
             <ul class="items">
-                <li style="padding-top: 0;">
+                <li>
                     <div class="bg" onmouseover="" onmouseout="" id="i">
                         <div class="mask">
                             <p>
                                 <b>THIS IS THE DESCRIPTION OF THE GAME</b>
                                 <br>
                                 <br>
-                                This text field should be provided by the game maker to describ his or her game. The description here should include the style of the game, for example, 
-                                how many people can be involved, whether it needs good quality of internet connection, the average/typical time per round. It should be in detail but
-                                concise. 
+                                This text field should be provided by the game maker to describ his or her game. The
+                                description here should include the style of the game, for example,
+                                how many people can be involved, whether it needs good quality of internet connection,
+                                the average/typical time per round. It should be in detail but
+                                concise.
                             </p>
                         </div>
-                        <a href="../topdown/" style="display: block; text-decoration: none;"><div class="caption">
-                            <h2 style="font-weight: normal;">Topdown</h2>
-                        </div></a>
+                        <a href="../topdown/" style="display: block; text-decoration: none;">
+                            <div class="caption">
+                                <h2 style="font-weight: normal;">Topdown</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="bg" onmouseover="" onmouseout="" id="i">
+                        <div class="mask">
+                            <p>
+                                <b>THIS IS THE DESCRIPTION OF THE GAME</b>
+                                <br>
+                                <br>
+                                This text field should be provided by the game maker to describ his or her game. The
+                                description here should include the style of the game, for example,
+                                how many people can be involved, whether it needs good quality of internet connection,
+                                the average/typical time per round. It should be in detail but
+                                concise.
+                            </p>
+                        </div>
+                        <a href="../topdown/" style="display: block; text-decoration: none;">
+                            <div class="caption">
+                                <h2 style="font-weight: normal;">Topdown</h2>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <li style="padding-bottom: 0;">
+                    <div class="bg" onmouseover="" onmouseout="" id="i">
+                        <div class="mask">
+                            <p>
+                                <b>THIS IS THE DESCRIPTION OF THE GAME</b>
+                                <br>
+                                <br>
+                                This text field should be provided by the game maker to describ his or her game. The
+                                description here should include the style of the game, for example,
+                                how many people can be involved, whether it needs good quality of internet connection,
+                                the average/typical time per round. It should be in detail but
+                                concise.
+                            </p>
+                        </div>
+                        <a href="../topdown/" style="display: block; text-decoration: none;">
+                            <div class="caption">
+                                <h2 style="font-weight: normal;">Topdown</h2>
+                            </div>
+                        </a>
                     </div>
                 </li>
             </ul>
+        </div>
+        <div class="footer">
+            <div class="declaration" style="color: #aaa;">
+                <div id="name">
+                    <h2>Room923</h2>
+                </div>
+                <div id="author">Created by <a href="https://github.com/EthanGeekFan/room923/">Room923</a> | <a
+                        href="https://github.com/EthanGeekFan/">Yifan Yang</a></div>
+                <div style="margin-top: 15px;">All Rights Reserved</div>
+            </div>
         </div>
     </div>
 </body>
