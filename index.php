@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        923 | Home
+        Home | Room 923
     </title>
     <meta name="yandex-verification" content="f01652281728bc24" />
     <link rel="shortcut icon" href="/favicon.png">

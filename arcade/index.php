@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Arcade | Mafia</title>
+    <title>Arcade | Room 923</title>
     <link rel="shortcut icon" href="/favicon.png">
     <!-- <link rel="stylesheet" href="/css/global.css"> -->
     <style>

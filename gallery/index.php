@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        Our Legendary Gallery
+        Gallery | Room 923
     </title>
     <link rel="stylesheet" href="/css/global.css">
     <link rel="shortcut icon" href="/favicon.png">
