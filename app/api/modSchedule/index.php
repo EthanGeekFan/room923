@@ -44,7 +44,7 @@ $passwd = 'mygoal4MIT!';
 $dbname = 'schedules';
 $conn = new mysqli($server, $user, $passwd, $dbname);
 if ($conn->connect_error) {
-    die('Database Connection Failed: ') . $conn->connect_error;
+    die('Database Connection Failed: ' . $conn->connect_error);
 }
 $stmt = $conn->prepare("UPDATE demo SET schedule = ? WHERE weekday = ?;");
 $stmt->bind_param("si", json_encode($insertRow), $day);
